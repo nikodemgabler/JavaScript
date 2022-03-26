@@ -214,11 +214,98 @@ var firstLetterOfFirstName = "";
 var firstName = "Ada";
 
 firstLetterOfFirstName = firstName[0];
-console.log(firstLetterOfFirstName);
+// console.log(firstLetterOfFirstName);
 // Setup
 var firstLetterOfLastName = "";
 var lastName = "Lovelace";
 firstLetterOfLastName = lastName;
 
 
-//STRING UMMUTABILITY 33:29
+// STRING IUMMUTABILITY - they connot be altered once created (individual characters of a string literal cannot be changed)
+var myStr = "Jello World"
+
+myStr[0] = "H"; // it is wrong 
+myStr = "Hello World" // we have to change it in this way
+// console.log(myStr);
+
+// BRACKET NOTATION TO FIND Nth CHARACTER IN STRING
+var firstName = "Ada";
+var secondLetterOfFirstName = firstName[1];
+
+var lastName = "Lovelace"
+
+var thirdLetterOfLastName = lastName[2];
+// console.log(secondLetterOfFirstName);
+
+
+// BRACKET NOTATION TO FIND LAST CHARACTER IN STRING
+ var firstName = "Ada"
+ var lastLetterOfFirstName = firstName[firstName.length - 1];  // 3 - 1 = 2 - but [2] is like [3] so it's importnant to pay attantion for it
+//  console.log(lastLetterOfFirstName); 
+
+// BRACKET NOTATION TO FIND nth-to-Last CHARACTER IN STRING
+// 3-rd to last letter
+var firstName = "Ada";
+var thirdToLastLetterOfFirstName = firstName[firstName.length - 3];
+// console.log(thirdToLastLetterOfFirstName);
+// 2-nd to last letter
+var lastName = "Ada";
+var secondToLastLetterOfLastName = lastName[lastName.length - 2];
+// console.log(secondToLastLetterOfLastName);
+
+
+// WORD BLANKS
+function wordBlanks(myNoun, myAdjective, myVerb, myAdverb) {
+    var result = "";
+    result += "The "+ myAdjective + " " + myNoun + " " + myVerb + " to the store " + myAdverb;
+
+    return result;
+}
+// console.log(wordBlanks("dog", "big", "ran", "quickly"));
+// console.log(wordBlanks("bike", "slow", "flew", "slowly"));
+
+
+// STORE MULTIPLE VALUES WITH ARRAYS
+var ourArray = ["John", 23] // every element in the array is separated by a comma.
+var myArray = ["Quincy", 1];
+// console.log(ourArray);
+
+
+// NESTED ARRAYS
+var ourArray = [["the universe", 42], ["everything, 101010"]];
+var myArray = [["Bulls", 23], ["White Sox", 45]];
+// console.log(myArray);
+
+
+// ACCESS ARRAY DATA WITH INDEXES
+var ourArray = [50, 60, 70];
+var ourData = ourArray [0]; // equals 50
+
+var myArray = [50,60,70];
+var myData = myArray[2];
+// console.log(myData);
+
+
+// MODIFY ARRAY DATA WITH INDEXES - With arrays we can edit particular elements
+var ourArray = [18, 64, 99];
+ourArray[1] = 45; //ourArray now equals [18, 45, 99]
+// console.log(ourArray)
+
+
+// ACCESS MULTI-DIMENSIONAL ARRAYS WITH INDEXES
+var myArray = [[1,2,3], [4,5,6], [7,8,9], [[10,11,12], 13,14]];
+
+var myData = myArray[2][1]; // = 8 [2 = third array [7,8,9] and second [1] = number of element in this Array]
+// console.log(myData);
+
+var myData = myArray[3][0][0]; // [3] = 4th array [0] = 1st array [0] = 1st element in first array in fourth array
+console.log(myData);
+
+
+// MANIPULATE ARRAYS WITH push();
+var ourArray = ["Stimpson", "J", "cat"];
+ourArray.push(["happy", "joy"]);
+// ourArray now equals ["Stimpson", "J", "cat", ["happy", "joy"]]
+
+myArray = [["John", 23], ["cat", 2]];
+
