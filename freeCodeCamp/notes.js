@@ -665,4 +665,322 @@ function testLessThanOrEqual(val) {
 }
 // console.log(testLessThanOrEqual(25))
 
-// AND / OR - 1:19:16
+
+
+
+    // COMPARISIONS WITH THE LOGICAL AND OPERATOR
+// It's useable when we want to check at least 2 things are true at the same time.
+function testLogicalAnd(val) {
+    if (val <= 50) {
+        if (val >= 25) {
+            return "It's equal 25 or over or it's equal 50 or less";
+        }
+    }
+    return "No";
+}
+// console.log(testLogicalAnd(25));
+function testLogicalAnd2(val) {
+    if (val <=50 && val >= 25) {
+        return "Yes";
+    }
+    return "No";
+}
+// console.log(testLogicalAnd2(25));
+
+
+
+
+    // COMPARISIONS WITH THE LOGICAL or OPERATOR
+function testLogicalOr(val) {
+    if (val < 10) {
+        return "Outside";
+    }
+    if (val > 20) {
+        return "Outside";
+    }
+    return "Inside";
+}
+// console.log(testLogicalOr(15));
+
+function testLogicalOr2(val) {
+    if (val < 10 || val > 20) {
+        return "Outside";
+    }
+    return "Inside"
+}
+// console.log(testLogicalOr(15));
+
+
+
+
+
+    // ELSE STATEMENTS
+// When an if statement is true, normally the block of code right after the if statement will be evaluated
+// If it's not true, nothing happens
+// With an "else" statement, an alternate block of code be executed when it's not true
+function testElse(val) {
+    var result = "";
+
+    if(val > 5) {
+        result = "Bigger than 5";
+    }
+    if(val <= 5) {
+        result = "5 or Smaller"
+    }
+    return result;
+}
+// console.log(testElse(5));
+function testElse2(val) {
+    var result = "";
+
+    if (val > 5) {
+        result = "Bigger than 5";
+    } else {
+        result = "5 or Smaller";
+    }
+    return result;
+}
+// console.log(testElse(5))
+
+
+
+
+
+    // ELSE IF STATEMENTS
+// If we have multiple conditions that need to be addressed, we can use "else if" statements
+function testElseIf(val) {
+    if (val > 10) {
+        return "Greater than 10";
+    }
+    if (val < 5) {
+        return "Smaller than 5";
+    }
+    return "Between 5 and 10"
+}
+// console.log(testElseIf(11));
+function testElseIf2(val) {
+    if (val > 10) {
+        return "Greater than 10"
+    } else if (val < 5) {
+        return "Smaller than 5";
+    } else {
+        return "Between 5 and 10"
+    }
+}
+// console.log(testElseIf(11));
+
+
+
+
+
+    // LOGICAL ORDER IN IF ELSE STATEMENTS
+// In "else if" statements order is very important
+function orderMyLogic(val) {
+    if (val < 10) {
+        return "Less than 10";
+    } else if (val < 5) {
+        return "Less than 5"
+    } else {
+        return "Greater than or equal to 10"
+    }
+} // this is a bad order and if val = 4 we still get communicate "Less than 10"
+
+function orderMyLogic2(val) {
+    if (val < 5) {
+        return "Less than 5"
+    } else if (val < 10) {
+        return "Less than 10"
+    } else {
+        return "Equal or over 10"
+    }
+} // once the first condition is met, it doesn't even check for the rest of and condistions
+// console.log(orderMyLogic2(11))
+
+
+
+
+    // CHAINING If Else STATEMENTS
+function testSize(num) {
+    if (num < 5) {
+      return "Tiny"
+    } else if (num < 10) {
+        return "Small"
+    } else if (num < 15) {
+        return "Medium"
+    } else if (num < 20) {
+        return "Large"
+    } else {
+    return "Huge";
+    }
+}
+// console.log(testSize(20));
+
+
+
+
+    // GOLF CODE
+var names = ["Hole-in-one!", "Eagle", "Bridie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+function golfScore(par, strokes) {
+
+    if (strokes == 1){
+         return names[0];
+    } else if (strokes <= par - 2){
+        return names[1];
+    } else if (strokes == par - 1) {
+        return names[2]
+    } else if (strokes == par) {
+        return names[3]
+    } else if (strokes == par + 1) {
+        return names[4]
+    } else if (strokes == par + 2) {
+        return names[5]
+    } else if (strokes == par + 3) {
+        return names[6]
+    }
+}
+// console.log(golfScore(0, 2));
+
+
+
+
+
+    // SWITCH STATEMENTS
+// Instead of using chained else if statements you can use a switch statement
+// Switch statement tests a value and can have many case statements which define various possible values
+function caseInSwitch(val) {
+    var answer = "";
+    switch(val) { // we're gonna compare the val to the different cases that we have. 
+        case 1: // It's saying if the case of val is 1 and it's using === operator then we invoke case 1
+            answer = "alpha";
+            break;
+        case 2:
+            answer = "beta";
+            break;
+        case 3:
+            answer = "gamma";
+            break;
+        case 4:
+            answer = "delta"
+            break;
+    }
+        return answer;
+}
+// console.log(caseInSwitch(4));
+// Write a switch statement which tests val and sets answer for the following conditions:
+// 1 - "alpha"
+// 2 - "beta"
+// 3 - "gamma"
+// 4 - "delta"
+
+
+
+
+
+    // DEFAULT OPTION IN SWITCH STATEMENTS
+//
+function switchOfStuff(val) {
+    var answer = "";
+    switch (val) {
+        case "a":
+            answer = "apple";
+            break;
+        case "b":
+            answer = "bird";
+            break;
+        case "c":
+            answer = "cat";
+            break;
+        default: // it's like "else"
+            answer = "stuff";
+            break
+    }
+    return answer;
+}
+// console.log(switchOfStuff(2)); // then we get empty string, because var answer = " " if we don't set the "default";
+
+
+
+
+
+    // MULTIPLE IDENTICAL OPTIONS IN SWITCH STATEMENTS
+function sequentialSizes(val) {
+    var answer = "";
+    switch(val) {
+        case 1:
+        case 2:
+        case 3:
+            answer = "Low"
+            break;
+        case 4:
+        case 5:
+        case 6:
+            answer = "Medium"
+            break;
+        case 7:
+        case 8:
+        case 9:
+            answer = "High";
+            break;
+    }
+    return answer;
+}
+// console.log(sequentialSizes(5));
+
+
+
+
+    // REPLACING IF ELSE CHAINS WITH SWITCH
+function exmapleIfElseChain (val) {
+    var answer = "";
+
+    if (val === "bob") {
+        answer = "Marley";
+    } else if (val === 42) {
+        answer = "The Answer"
+    } else if (val === 1) {
+        answer = "There is no #1"
+    } else if (val === 99) {
+        answer = "Missed me by this much!";
+    } else if (val === 7) {
+        answer = "Ate Nine";
+    } else {
+        answer = "Something else";
+    }
+    return answer;
+}
+// console.log(exmapleIfElseChain("bob"))
+
+function chainToSwitch(val) {
+    var answer = "";
+
+    switch (val) {
+        case "bob":
+            answer = "Marley";
+            break;
+        case 42:
+            answer = "The answer"
+            break;
+        case 1:
+            answer = "There is no #1"
+            break;
+        case 99:
+            answer = "Missed me by this much!";
+            break;
+        case 7:
+            answer = "Ate Nine"
+            break;
+    }
+    return answer;
+}
+// console.log(chainToSwitch(7));
+
+
+
+
+
+
+    // RETURNING BOOLEAN VALUES FROM FUNCTIONS 1:41
+
+
+
+
