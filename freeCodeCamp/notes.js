@@ -980,7 +980,203 @@ function chainToSwitch(val) {
 
 
     // RETURNING BOOLEAN VALUES FROM FUNCTIONS 1:41
+function isLess(a, b) {
+    if (a < b) {
+        return true;
+    } else {
+        return false;
+    }
+}
+// We can make it simpler
+function isLess(a, b) {
+    return a < b;
+}
+// console.log(isLess(10, 15)) // result = true
+// console.log(isLess(20, 15)) // result = false
 
 
+
+
+    // RETURNING EARLY PATTERN FROM FUNCTIONS
+    function abTest(a, b) {
+
+        if (a < 0 || b < 0) {
+            return undefined;
+        } 
+        return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+    }
+    // console.log(abTest(0,2))
+
+
+
+
+    // COUNTING CARDS
+var count = 0;
+
+function cc(card) {
+    switch(card) {
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+            count++
+            break; 
+        case "10":
+        case "J":
+        case "Q":
+        case "K":
+        case "A":
+            count--
+            break;
+    } 
+    var holdOrBet = "Hold"
+    if (count > 0) {
+        holdOrBet = "Bet"
+    }
+
+    return count + " " + holdOrBet;
+}
+cc(2); cc("K"); cc("Q"); cc(2)
+// console.log(cc(4));
+
+
+
+
+    // BUILD JAVASCRIPT OBJECTS
+// Objects are similar to arrays, but instead of using indexes to acces data, we use properties.
+var ourDog = { // it is an object called ourDog
+    "name": "Camper", // property
+    "legs": 4, // property
+    "tails": 1, // property
+    "friends": ["everything!"] // property
+};
+
+var myDog = {
+    "name": "Quincy",
+    "legs": 3,
+    "tails": 2,
+    "friends": []
+}
+
+
+
+
+
+    // ACCESSING OBJECT PROPERTIES WITH DOT NOTATION
+// There are two main ways to access a property on an object
+var testObj = {
+    "hat": "ballcap",
+    "shirt": "jersey",
+    "shoes": "cleats"
+};
+// First is dot notation 
+var hatValue = testObj.hat // = "ballcap"
+var shirtValue = testObj.shirt; // = "jersey"
+
+
+// Second method - ACCESSING OBJECT PROPERTIES WITH BRACKET NOTATION
+// We can use it any time IF THE NAME HAS A SPACE in it
+    var testObj = {
+        "an entree": "hamburger",
+        "my side": "veggies",
+        "the drink": "water",
+    }
+    var entreeValue = testObj["an entree"]; // hamburger
+    var drinkValue = testObj['the drink']; // water
+
+
+
+
+
+
+    //  ACCESSING OBJECT PROPERTIES WITH VARIABLES
+ // Bracket notation can also be used to look up object properties using variables
+ var testObj = {
+     12: "Namath",
+     16: "Montana",
+     19: "Unitas:"
+ };
+
+ var playerNumber = 16;
+ var player = testObj[playerNumber];
+//  console.log(player) // Montana 
+
+
+
+
+    // UPDATING OBJECT PROPERTIES
+// We can use dot notation to update object properties
+    var ourDog = { 
+        "name": "Camper", 
+        "legs": 4, 
+        "tails": 1,
+        "friends": ["everything!"]
+    };
+    ourDog.name = "Happy Camper";
+    // console.log(ourDog.name) = "Happy Camper"
+    var myDog = { 
+        "name": "Lessie", 
+    };
+    myDog.name = "Happy Lessie";
+    // console.log(ourDog);
+
+
+
+
+
+    // ADD NEW PROPERTIES TO AN OBJECT
+    var newDog = { 
+        "name": "Lucjan", 
+        "legs": 4, 
+        "tails": 1,
+        "friends": ["freeCodeCamp Campers"]
+    };
+    newDog.bark = "bow-wow";
+    // console.log(newDog) = Now it has 5 properties
+
+    // DELETE PROPERTIES FROM AN OBJECT
+    delete newDog.bark;
+    // console.log(newDog) // Now it has again 4 properties
+
+
+
+
+
+    
+    // USING OBJECTS FOR LOOKUPS
+
+function phoneticLookup(_val) {
+    var _result = "";
+    
+    var lookup {
+        "alpha": "Adams",
+        "bravo": "Boston",
+        "charlie": "Chciago",
+        "delta": "Denver",
+        "echo": "Easy",
+        "foxtrot": "Frank",
+    };
+    // switch(_val) {
+    //     case "alpha":
+    //         _result = "Adams";
+    //         break;
+    //     case "bravo":
+    //         _result = "Boston";
+    //         break;
+    //     case "charlie":
+    //         _result = "Chicago";
+    //         break;
+    //     case "delta":
+    //         _result = "Denver";
+    //         break;
+    //     case "echo":
+    //         _result = "Easy";
+    //         break;
+    //     case "foxtrot": 
+    //         _result = "Frank";
+    //         break;
+    // }
+}
 
 
