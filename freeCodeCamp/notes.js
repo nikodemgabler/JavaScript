@@ -1145,11 +1145,10 @@ var shirtValue = testObj.shirt; // = "jersey"
 
     
     // USING OBJECTS FOR LOOKUPS
-
-function phoneticLookup(_val) {
-    var _result = "";
+function phoneticLookup(val) {
+    var result = "";
     
-    var lookup {
+    var lookup = {
         "alpha": "Adams",
         "bravo": "Boston",
         "charlie": "Chciago",
@@ -1157,6 +1156,9 @@ function phoneticLookup(_val) {
         "echo": "Easy",
         "foxtrot": "Frank",
     };
+
+    result = lookup[val]
+    return result;
     // switch(_val) {
     //     case "alpha":
     //         _result = "Adams";
@@ -1178,5 +1180,248 @@ function phoneticLookup(_val) {
     //         break;
     // }
 }
+//  console.log(phoneticLookup("foxtrot"))
 
 
+
+
+
+
+
+    // TESTING OBJECTS FOR PROPERTIES
+// We can check if an object has a property with the .hasOwnProperty method
+
+var myObj = {
+    gift: "pony",
+    pet: "kitten",
+    bed: "sleigh",
+};
+
+function checkObj(checkProp) {
+
+    if (myObj.hasOwnProperty(checkProp)) {
+        return myObj[checkProp];
+    } else {
+        return "Not found"
+    }
+}
+
+// console.log(checkObj("pet"));
+
+
+
+
+
+
+
+    // MANIPULATING COMPLEX OBJECTS
+// JavaScript object is a way to store flexible data
+// We can store: strings, numbers, arrays and other objects
+var myMusic = [
+    {
+        "artist": "Billy Joel",
+        "title": "Piano Man",
+        "release_year": 1973,
+        "formats": [
+            "CD",
+            "8T",
+            "LP"
+        ],
+        "gold": true
+    },
+
+    {
+        "artist": "Beau Carens",
+        "title": "Cereal Man",
+        "release_year": 2003,
+        "formats": [
+            "Youtube video"
+        ]
+    }
+]
+// console.log(myMusic)
+
+
+
+
+
+
+
+    // ACCESSING NESTED OBJECTS
+var myStorage = {
+    "car": {
+        "inside": {
+            "glove box": "maps",
+            "passenger seat": "crumbs"
+        },
+        "outside": {
+            "trunk": "jack"
+        }
+    }
+}
+
+var gloveBoxContents = myStorage.car.inside["glove box"];
+// console.log(gloveBoxContents)
+
+
+
+
+
+
+    // ACCESSING NESTED ARRAYS
+// Array bracket notation can be changed to acces nested arrays
+var myPlants = [
+    {
+        type: "flowers",
+        list: [
+            "rose",
+            "tulip",
+            "dandelion"
+        ]
+    },
+    {
+        type: "trees",
+        list: [
+            "fir",
+            "pine",
+            "birch"
+        ]
+    }
+];
+var secondTree = myPlants[1].list[1];
+// console.log(secondTree)
+
+
+
+
+
+
+    // RECORD COLLECTION
+var collection = {
+    "2548": {
+        "album": "Slippery When Wet",
+        "artist": "Bon Jovi",
+        "tracks": [
+            "Let It Rock",
+            "You Give Love a Bad Name"
+        ]
+    },
+    "2468": {
+        "album": "1999",
+        "artist": "Prince",
+        "tracks": [
+            "1999",
+            "Little Red Corvette"
+        ]
+    },
+    "1245": {
+        "artist": "Robert Palmer",
+        "tracks": [ ]
+    },
+    "5439": {
+        "album": "ABBA Gold"
+    }
+};
+// Keep a copy of the collection for tests
+var collectionCopy = JSON.parse(JSON.stringify(collection));
+
+function updateRecords(id, prop, value) {
+
+    if (value === "") {
+        delete collection[id][prop]
+    } else if (prop === "tracks") {
+        collection[id][prop] = collection[id][prop] || [];
+        collection[id][prop].push(value)
+    } else {
+        collection[id][prop] = value;
+    }
+
+    return collection;
+}
+
+// console.log(updateRecords("5439", "artist", "ABBA"));
+
+
+var collection2 = {
+    "2548": {
+        "album": "Slippery When Wet",
+        "artist": "Bon Jovi",
+        "tracks": [
+            "Let It Rock",
+            "You Give Love a Bad Name"
+        ]
+    },
+    "2468": {
+        "album": "1999",
+        "artist": "Prince",
+        "tracks": [
+            "1999",
+            "Little Red Corvette"
+        ]
+    },
+    "1245": {
+        "artist": "Robert Palmer",
+        "tracks": [ ]
+    },
+    "5439": {
+        "album": "ABBA Gold"
+    }
+};
+
+function updateCollection2 (id, prop, value) {
+
+    if (value === "") {
+        delete collection2[id][prop]
+    } else if (collection2[id][prop] = collection2[id][prop] || "") {
+        collection2[id][prop].push(value)
+    }
+    return collection2
+
+}
+// console.log(updateRecords(2468, "tracks", "test"));
+
+
+
+
+
+
+    // ITERATE WITH WHILE LOOPS
+// Loops aloow to run the same code multiple times
+// "while" loop runs while a specified condition is true
+var myArray = [];
+
+var i = 0
+while (i < 5) {
+    myArray.push(i)
+    i++
+}
+
+// console.log(myArray);
+
+
+
+
+
+
+    // ITERATE WITH FOR LOOPS
+// "for" loop is the most common type of loop in JavaScript
+var ourArray = [];
+
+    // initialization ; condition ; expression 
+for (var i = 0; i < 5; i++) {
+    ourArray.push(i);
+}
+
+var myArray = [];
+
+for(var i = 1; i < 6; i++) {
+    myArray.push(i);
+}
+
+console.log(myArray);
+
+
+
+
+
+    // ITERATE ODD NUMBERS WITH A FOR LOOP
