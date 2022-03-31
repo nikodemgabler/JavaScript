@@ -1418,10 +1418,176 @@ for(var i = 1; i < 6; i++) {
     myArray.push(i);
 }
 
-console.log(myArray);
+// console.log(myArray);
 
 
 
 
 
-    // ITERATE ODD NUMBERS WITH A FOR LOOP
+    // ITERATE ODD NUMBERS WITH A FOR LOOP // ODD - nieparzyste
+var ourArray = [];
+
+for (var i = 0; i < 10; i += 2) {
+    ourArray.push(i);
+}
+// console.log(ourArray);
+
+
+var myArray = [];
+
+for (var i = 1; i < 10; i += 2) {
+    myArray.push(i);
+}
+// console.log(myArray)
+
+
+
+
+
+
+    // COUNT BACKWARDS WITH A FOR LOPP
+var myArray = [];
+
+for (i = 10; i > 0; i -= 2) {
+    myArray.push(i);
+}
+// console.log(myArray); 
+
+
+
+
+
+    // ITERATE THROUGH AN ARRAY WITH A FOR LOOP
+var ourArr = [9, 10, 11, 12];
+var ourTotal = 0;
+
+for (var i = 0; i < ourArr.length; i++) {
+    ourTotal += ourArr[i]
+}
+
+// console.log (ourTotal);
+// console.log(ourArr)
+
+var myArr = [2, 3, 4, 5, 6]
+var myArrSum =  0;
+
+for (i = 0; i < myArr.length; i++) {
+    myArrSum += myArr[i]
+}
+// console.log(myArrSum)
+
+
+
+
+
+
+
+    // NESTING FOR LOOPS
+function multiplyAll(arr) {
+    var product = 1;
+
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < arr[i].length; j++) {
+            product *= arr[i][j]; 
+        }
+    }
+    return product;
+}
+product = multiplyAll([[1,2], [3,4], [5,6,7]])
+// console.log(product);
+
+
+
+
+
+
+function essa(arr) {
+    var sum = 1;
+
+    for (i = 0; i < arr.length; i++) {
+        for (j = 0; j < arr[i].length; j++) {
+            sum *= arr[i][j];
+        }
+    }
+    return sum;
+}
+
+
+sum = essa([[1,2], [3,4], [5,6,7]])
+// console.log(sum)
+
+
+
+
+
+    
+    // ITERATE WITH Do.. While LOOPS
+// In a do ... while loop, this is ALWAYS RUN AT LEAST ONCE before it check the condition
+
+var myArray = [];
+var i = 10;
+
+do {
+    myArray.push(i);
+    i++
+} while (i < 5) 
+
+// console.log(i, myArray);
+
+
+
+
+
+    // PROFILE LOOKUP
+var contacts = [
+    {
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "number": "05142552656",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "05142564245",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "05142532532",
+        "likes": ["Intiguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Krystian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": ["JavaScript", "Gaming", "Foxes"]
+    }
+]
+
+// We want to do is create this lookUpProfile function where we pass in a name and property and it's going to return the value of that property
+// When we pass in ("Krystian", "number") function has to show us his number
+// If we pass in name that doesn't exist, then function show us "No such contact" or "No such property" in no property case
+
+function lookUpProfile(name, prop) {
+var data = "";
+
+// if (name == "Akira" && prop == "likes"){
+//     data = contacts[0].likes
+// }
+
+    for (var i = 0; i < contacts.length; i++) {
+        if (contacts[i].firstName === name) {
+            return contacts[i][prop] || "No such property";
+        }
+    }
+return "No such contact"
+}
+
+var data = lookUpProfile("Akira", "likes");
+console.log(data);
+// console.log(contacts[1].likes)
+
+
+// 1. The first thing for each of these contacts we're going to check is if the name is a name in this list
