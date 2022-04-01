@@ -1570,24 +1570,70 @@ var contacts = [
 // When we pass in ("Krystian", "number") function has to show us his number
 // If we pass in name that doesn't exist, then function show us "No such contact" or "No such property" in no property case
 
-function lookUpProfile(name, prop) {
-var data = "";
+function showProp(name, prop) {
 
-// if (name == "Akira" && prop == "likes"){
-//     data = contacts[0].likes
-// }
-
-    for (var i = 0; i < contacts.length; i++) {
-        if (contacts[i].firstName === name) {
-            return contacts[i][prop] || "No such property";
+    var data = ""
+    
+    for (i = 0; i < contacts.length; i++) {
+        if(name === contacts[i].firstName) {
+            return contacts[i][prop] || "No such property"
         }
     }
-return "No such contact"
+    return "No such contact"
 }
 
-var data = lookUpProfile("Akira", "likes");
-console.log(data);
-// console.log(contacts[1].likes)
-
+var data = showProp("Sherlock", "lastName")
+// console.log(data);
 
 // 1. The first thing for each of these contacts we're going to check is if the name is a name in this list
+
+
+
+
+
+
+    // GENERATE RANDOM FRACTIONS
+// simple way to create a random decimal number (l. dziesiętna) in JavaScript
+function randomFraction() {
+    return Math.random()
+}
+// console.log(randomFraction()) 
+
+
+
+
+    // GENERATE RANDOM WHOLE NUMBERS
+// Math.floor - it rounds down to the nearest whole number
+// Math.random can never be 1 ( it can be 0 but it can ever be quite 1)
+// whem we multiply it by 20 we're going to get a number betwee 0 and 20, but not including 20
+// by Math.floor we are rounding it down which will end up being 0 to 19;
+ var randomNumberBetween0and19 = Math.floor(Math.random() * 20);
+
+ function randomWholeNum () {
+
+    return Math.floor(Math.random()*10);
+ }
+
+//  console.log(randomWholeNum());
+//  console.log(randomWholeNum());
+
+
+
+
+    // GENERATE RANDOM WHOLE NUMBERS WITHIN A RAGE
+function ourRandomRange(ourMin, ourMax) {
+    return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
+}
+
+
+function randomRage(myMin, myMax) {
+    return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin
+}
+console.log(ourRandomRange(6, 9))
+
+
+
+
+
+    // USE THE pareseInt FUNCTION
+
