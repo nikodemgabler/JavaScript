@@ -1629,11 +1629,38 @@ function ourRandomRange(ourMin, ourMax) {
 function randomRage(myMin, myMax) {
     return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin
 }
-console.log(ourRandomRange(6, 9))
+// console.log(ourRandomRange(6, 9))
 
 
 
 
 
-    // USE THE pareseInt FUNCTION
+    // USE THE parseInt FUNCTION
+// It takes a string and returns an integer.
+function convertToInteger(str) {
+    return parseInt(str);
+}
+var number = "56";
+
+
+
+
+    // USE THE parseInt FUNCTION WITH A RADIX
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
