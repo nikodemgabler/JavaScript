@@ -1636,31 +1636,236 @@ function randomRage(myMin, myMax) {
 
 
     // USE THE parseInt FUNCTION
-// It takes a string and returns an integer.
+// It takes a string and returns an integer. - Integer (liczba całkowita)
 function convertToInteger(str) {
     return parseInt(str);
 }
 var number = "56";
+// console.log(convertToInteger(number))
+
+
+
 
 
 
 
     // USE THE parseInt FUNCTION WITH A RADIX
+// Radix specifies the base of the number in the string ( such as base 2 or 7 or 8)
+// Base 2 is binary so that's one of the most common ones to use
+function convertToInteger(str) {
+    return parseInt(str, 2)
+}
+// console.log(convertToInteger("10011"))
+
+
+
+
+
+    // USE THE CONDITIONAL (Ternary) OPERATOR  - Operator trójskładnikowy
+// condition ? statement-if-true : statement-if-false
+function checkEqual (a,b) {
+    return a === b ? true : false;
+}
+
+
+
+
+
+    // USE MULTIPLE CONDITIONAL (Ternary) OPERATORS
+// We can nest them within each other which gives them even more power
+
+function checkSign(num) {
+    // return num > 0 ? "positive" : num < 0 ? "negative" : "zero";
+    // conditioin | true = "pos.." | <0 = "negative" // false = "zero"
+    return num > 0 ? "positive" : num === 0 ? "zero" : "negative"
+   
+}
+// console.log(checkSign(-90));
+
+
+
+
+
+    // DIFFERENCES BETWEEN THE var and let KEYWORDS
+let catName = "Quincy";
+var quote;
+
+catName = "Beau";
+
+function catTalk(kittyName) {
+    "use strict";
+    // it helps to catch coding mistakes (if u create a variable and don't declare it with var, let or const)
+
+    catName = kittyName;
+    quote = catName + " says Meow!";
+    return quote;
+}
+
+// catTalk();
+// console.log(catTalk("Emma"))
+
+
+
+
+
+    // COMPARE SCOPES OF THE var AND let KEYWORDS
+// when we declare var , it is decleraed globally or locally
+// let - is limited to the block statement or expression that it was declared in
+// event if var is in the if(), it works outside the condition
+function checkScope() {
+    "use strict";
+    let i = "function scope";
+    if(true) {
+        let i = "block scope";
+        console.log("Block scope i is: ", i);
+    }
+    console.log("Function scope i is: ", i);
+    return i;
+}
+// checkScope();
+
+
+
+
+
+    // DECLARE A READ-OLNY VARIABLE WITH THE const KEYWORD
+// const has all the features of let but it's also read-only - we cannot reassing the const
+function printManyTimes(str) {
+    "use strict";
+
+    const SENTENCE = str + " is cool!";
+// if you declare a variable with the const keyowrd you cannot reassing it afterwards.
+    SENTENCE = str + " is amazing!"
+
+    for(let i = 0; i < str.length; i += 2 ) {
+        console.log(SENTENCE);
+    }
+}
+// printManyTimes("freeCodeCamp");
+
+
+
+
+    // MUTATE AN ARRAY DECLARED WITH const
+const s = [5, 7, 2]
+function editInPlace () {
+    "use strict";
+
+    // s = [2, 5, 7]
+    s[0] = 2;
+    s[1] = 5;
+    s[2] = 7;
+
+    return console.log(s)
+}
+// editInPlace();
 
 
 
 
 
 
+    // PREVENT OBJECT MUTATION
+// object.freeze will prevent data mutation
+
+function freezeObj() {
+    "use strict";
+    const MATH_CONSTANTS = {
+        PI: 3.14
+    };
+
+    // Object.freeze(MATH_CONSTANTS);
+
+    try {
+        MATH_CONSTANTS.PI = 99;
+    } catch ( ex ) {
+        console.log(ex);
+    }
+    return MATH_CONSTANTS.PI;
+}
+
+const PI = freezeObj();
+
+// console.log(PI);
+
+
+
+
+    // USE ARROW FUNCTIONS TO WRITE CONCISE ANONYMOUS FUNCTIONS
+
+// It's an anonymous function coz it doesn't have a name. It is assinged to var magic
+var magic = function() {
+    return new Date();
+}
+// An anonymous function can be converted into an arrow function 
+var magic = () => {
+    return new Date();
+}
+// We can make it shorter even more IF WE RETURNING JUST ONE VALUE
+var magic = () => new Date();
+
+
+
+
+    // WRITE ARROW FUNCTIONS WITH PARAMETERS
+// We can pass arguments to arrow functions
+var myConcat = function(arr1, arr2) {
+    return arr1.concat(arr2);
+};
+
+var myConcat2 = (arr1, arr2) => arr1.concat(arr2);
+// console.log(myConcat2([1,2], [3,4,5]));
 
 
 
 
 
+    // WRITE HIGHER ORDER ARROW FUNCTIONS
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+
+const squareList = (arr) => {
+    const squaredIntegers = arr.filter(num => Number.isInteger(num) && num > 0).map(x => x * x);
+    return squaredIntegers;
+};
+
+const squaredIntegers = squareList(realNumberArray);
+// console.log(squaredIntegers);
 
 
 
 
+    // WRITE HIGHER ORDER ARROW FUNCTIONS
+const increment = (function() {
+    return function increment(number, value = 1) {
+        return number + value;
+    }
+})();
+// console.log(increment(5,2)); 
+// console.log(increment(5));
 
 
 
+
+    // USE THE rest OPERATOR WITH FUNCTION PARAMETERS
+// rest operator allows to create a function that takes a variable number of arguments
+// rest operator = ...
+// let sum = (function() {
+//     return function sum(...args) {
+//         let args = [ x, y, z ];
+//         return args.reduce((a, b) => a + b, 0);
+//     };
+// })();
+// console.log(sum(1, 2, 3))
+
+
+
+    // USE THE Spread OPERATOR TO EVALUATE ARRAYS IN-PLACE
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+(function() {
+    arr2 = [...arr1];
+    arr1[0] = 'potato'
+})();
+console.log(arr2)
+
+// if we want arr2 to be copy of arr1, we have to spread operator inside brackets [...arr1]
