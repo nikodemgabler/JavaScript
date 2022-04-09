@@ -60,6 +60,7 @@ function filterItems(e) {
             item.style.display = "none";
         }
     })
+    
 }
 
 
