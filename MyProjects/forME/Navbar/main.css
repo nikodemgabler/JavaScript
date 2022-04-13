@@ -1,0 +1,139 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: rgb(218, 255, 255);
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    box-shadow: 2px 2px 2px 2px #b8b8b8;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    position: relative;
+    z-index: 101;
+    width: 80px;
+    height: 80px;
+}
+
+ul.inactive{
+    display: block;
+    transform: translateX(-400px);
+    position: absolute;
+    top: 78px;
+    width: 100%;
+    height: 240px;
+    list-style-type: none;
+}
+
+ul.active {
+    display: block;
+    transform: translateY(0);
+    transition: .4s ease-in-out;
+    position: absolute;
+    top: 78px;
+    width: 100%;
+    height: 240px;
+    box-shadow: 2px 2px 0px 0px #b8b8b8;
+    background: white;
+    list-style-type: none;
+}
+
+ul li {
+    font-size: 23px;
+    height: 60px;
+    padding: 10px 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+.burger {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    border-top: 5px solid black;
+    margin: 10px 30px 10px 0;
+    align-self: center;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+    z-index: 9999;
+}
+.burger::before{
+    display: block;
+    content: ' ';
+    border-bottom: 5px solid black;
+    width: 40px;
+    height: 7px;
+}
+.burger::after{
+    display: block;
+    content: ' ';
+    border-bottom: 5px solid black;
+    width: 40px;
+    height: 7px;
+}
+
+.burger.active {
+    width: 30px;
+    transform: rotate(90deg)
+}
+.burger.active::before {
+    width: 30px;
+}
+.burger.active::after {
+    width: 30px;
+}
+
+.socials {
+    display: none;
+}
+
+
+@media screen and (min-width: 768px) {
+    ul.active {
+        position: relative;
+        display: flex;
+        width: 70%;
+        justify-content: space-around;
+        top: 0;
+        height: 80px;
+        padding: 15px 0;
+        align-self: center;
+        box-shadow: none;
+        transition: .0s;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .socials {
+        margin-right: 60px;
+        display: flex;
+        width: 15vw;
+        height: 80px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .socials a {
+        width: 8px;
+        margin-right: 10px;
+    }
+    .socials a i {
+        width: 8px;
+        height: 8px;
+    }
+}
