@@ -126,11 +126,11 @@ itemInput.addEventListener('input', runEvent); // everything what we do is going
 
 
 // CHANGE for <select></select> - it gives us a value
-select.addEventListener('change', runEvent);
-select.addEventListener('input', runEvent);
+// select.addEventListener('change', runEvent);
+// select.addEventListener('input', runEvent);
 
 
-form.addEventListener('submit', runEvent)
+// form.addEventListener('submit', runEvent)
 
 
 
@@ -148,7 +148,7 @@ function runEvent(e) {
     // newDiv.style.transform = "translateX"+"("+e.offsetX+"px"+")";
     // newDiv.style.transform = "translateY"+"("+e.offsetY+"px"+")";
 
-
+    
 }
 
 
