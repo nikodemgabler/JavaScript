@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+header {
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+h1 {
+    font-size: 44px;
+    z-index: 102;
+    color: white;
+}
+
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+button {
+    width: 140px;
+    height: 40px;
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    cursor: pointer;
+    background-color: rgb(228, 228, 228);
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(53, 134, 255);
+    z-index: 100;
+}
+button.inactive::before {
+    content: '';
+    width: 50%;
+    height: 100%;
+    background-color: rgb(53, 134, 255);
+    border-radius: 20px;
+    transition: .1s ease-in-out;
+}
+button.inactive::after {
+    content: 'Pause';
+    width: 50%;
+    font-size: 17px;
+    background-color: rgb(228, 228, 228);
+}
+
+/* ACTIVE BUTTON */
+button.active::before {
+    content: 'Play';
+    width: 50%;
+    font-size: 17px;
+    background-color: rgb(228, 228, 228);
+}
+
+button.active::after {
+    transition: .1s ease-in-out;
+    content: '';
+    width: 50%;
+    height: 100%;
+    background-color: rgb(53, 134, 255);
+    border-radius: 20px;
+}

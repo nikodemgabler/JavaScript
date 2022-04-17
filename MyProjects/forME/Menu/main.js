@@ -5,10 +5,6 @@ let i = 0;
 
 // const breakfast = dishes.c;
 
-
-    
-
-
         for(i = 0; i < buttons.length; i++) {
 
         if (i == 0){
