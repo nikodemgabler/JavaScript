@@ -1,4 +1,3 @@
-
 :root {
 --clr-white: #fff;
 --clr-secondary: hsla(182, 63%, 54%);
@@ -9,12 +8,14 @@ html {
     scroll-behavior: smooth;
 }
 
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
 }
+
 
 body{
     display: flex;
@@ -86,12 +87,30 @@ header ul li a{
 
 .first-section {
     width: 100%;
+
+html {
+    width: 100vw;
+    overflow: hidden;
+}
+
+.first-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     color: white;
+}
+
+    background-image: url('./hero-bcg.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .first-section::before {
@@ -122,6 +141,15 @@ header ul li a{
 
 .first-section h1 {
     font-size: 32px;
+
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+.first-section h1 {
+    font-size: 52px;
+
     text-transform: uppercase;
     letter-spacing: 5px;
     color: white;
@@ -130,10 +158,30 @@ header ul li a{
 .first-section p {
     text-align: center;
     display: block;
+
     width: 90vw;
     margin: 20px 0 40px 0;
     color: white;
     font-weight: bold;
+
+    width: 700px;
+    margin: 20px 0 40px 0;
+    color: white;
+}
+
+.first-section button {
+    text-transform: uppercase;
+    width: 230px;
+    height: 50px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    border: 3px solid white;
+    color: white;
+    font-weight: bold;
+    background: none;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+
 }
 
 .first-section button:hover {
@@ -233,4 +281,5 @@ footer {
         font-weight: bold;
     }
 }
+
 
