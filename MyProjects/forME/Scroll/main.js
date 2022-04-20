@@ -63,7 +63,7 @@ scrollLinks.forEach(function(link){
 
         window.scrollTo({
             left: 0,
-            top: position + 90,
+            top: position,
         })
 
         ul.style.height = 0;
