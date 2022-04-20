@@ -59,21 +59,33 @@ header button {
     margin-right: 30px;
 }
 
-header ul.inactive {
-    display: none;
+header .links-parent.inactive {
+    height: 0;
+    transition: .3s ease-in-out;
 }
 
-header ul.active {
+header .links-parent {
     position: absolute;
     width: 100%;
+    height: auto;
     top: 90px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    list-style-type: none;
-
+    transition: .3s ease-in-out;
     background: white;
 }
+header ul.inactive{
+    transform: translateX(-1000px);
+    transition: 0s;
+}
+
+header ul {
+    list-style-type: none;
+    transition: .2s ease-in-out;
+    transform: translateX(0);
+}
+
 header ul li {
     padding: 20px 0 20px 30px;
 }
@@ -207,6 +219,7 @@ footer {
     header button {
         display: none;
     }
+
     header {
         position: absolute;
         display: flex;
@@ -219,18 +232,49 @@ footer {
         background: none;
     }
 
-    header ul.inactive {
+    header .links-parent.inactive {
         display: flex;
-        width: 500px;
-        justify-content: space-between;
-        list-style-type: none;
     }
     
+    header .links-parent {
+        display: flex;
+        justify-content: center;
+        background: white;
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 60%;
+        background: none;
+    }
+    header ul.inactive{
+        transform: translateX(0);
+        height: 90px;
+        background: none;
+    }
+    
+    header ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
+        background: none;
+    }
+    
+    header ul li {
+        padding: 0;
+        width: auto;
+    }
     header ul li a{
         color: black;
         text-decoration: none;
         font-size: 22px;
         font-weight: bold;
+    }
+
+    header.fixed-header {
+        background: white;
+        position: fixed;
     }
 }
 
