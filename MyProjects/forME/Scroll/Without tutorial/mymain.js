@@ -43,3 +43,32 @@ window.addEventListener('scroll', function(){
 })
 
 
+
+const ulLinks = document.querySelectorAll('.scroll-link');
+
+
+ulLinks.forEach(function(link){
+
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+
+        const id = e.target.getAttribute('href').slice(1);
+        const position = document.getElementById(id).offsetTop;
+
+        let navHeight =  navbar.getBoundingClientRect().height;
+
+        // if(navbar.classList.contains('fixed-header')){
+        //     navHeight = navbar.
+        // }
+    
+        
+
+        window.scrollTo({
+            left: 0,
+            top: position-navHeight,
+        })
+
+        linksContainer.style.height = 0;
+        links.classList.add('inactive');
+    })
+})
