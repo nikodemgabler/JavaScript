@@ -43,10 +43,8 @@ ul {
     grid-template-rows: repeat(6, auto);
     background: rgb(189, 189, 189);
     border-radius: 12px;
-}
-
-.bookmarks.active {
-    background: white;
+    background-color: white;
+    height: 100%;
 }
 
 .bookmarks h3 {
@@ -55,7 +53,6 @@ ul {
     justify-content: center;
     background-color: rgb(216, 216, 216);
     cursor: pointer;
-    border: 1px solid gray;
 }
 
 .bookmarks h3.active {
@@ -77,5 +74,9 @@ ul {
 }
 
 ul {
+    margin-top: 30px;
     grid-row:4;
+}
+.bookmark {
+    height: 44px;
 }
