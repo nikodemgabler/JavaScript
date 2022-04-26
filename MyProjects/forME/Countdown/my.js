@@ -24,6 +24,9 @@ const weekDays = [
 
 const giveawayFinish = document.querySelector('.giveaway');
 const boxes = document.querySelectorAll('.deadline h4')
+const deadline = document.querySelector('.deadline')
+
+
 
 const giveawayDate = new Date(2022, 4, 25, 13, 30, 0);
 
@@ -51,11 +54,32 @@ function timer(){
     const now = new Date().getTime();
     const toTheEnd = futureDate - now;
 
-    const days = toTheEnd / (24*60*60*1000);
-    const hours = now % toTheEnd / (24*60*60*1000);
-    const minutes = (now % toTheEnd) / (60*60*1000);
 
-    console.log(minutes);
+    const days = Math.floor(toTheEnd / (24*60*60*1000));
+    const hours = Math.floor(((toTheEnd % (24*60*60*1000)) / (60*60*1000)));
+    const minutes = Math.floor(((toTheEnd % (60*60*1000)) / (60*1000)));
+    const seconds = Math.floor(((toTheEnd % (60*1000)) / (1000)));
+
+    
+    const item = [days, hours, minutes, seconds]
+
+
+    if(item[3] < 10){
+        item[3] = `0${item[3]}`
+    }
+    else {
+        item[3] = item[3];
+    }
+
+    boxes.forEach(function(box, index){
+        box.innerHTML = item[index];
+    })
+
+    if (toTheEnd < 0){
+        deadline.innerHTML = "Giveaway is over"
+        clearInterval(countdown);
+    }
 }
+let countdown = setInterval(timer, 1000)
 
 timer();
