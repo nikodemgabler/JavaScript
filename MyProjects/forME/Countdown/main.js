@@ -24,9 +24,18 @@ const weekdays = [
 
 const giveaway = document.querySelector('.giveaway');
 const deadLine = document.querySelector('.deadline');
-const items = document.querySelectorAll('.deadline-format h4')
+const items = document.querySelectorAll('.box h4');
 
-let futureDate = new Date(2022, 4, 25, 11, 30, 0); // it shows current date
+
+// let tempDate = new Date();
+// let tempYear = tempDate.getFullYear();
+// let tempMonth = tempDate.getMonth();
+// let tempDay = tempDate.getDate();
+// const futureDate = new Date(tempYear, tempMonth, tempDay + 10, 21, 30, 0)
+// Gdybym chcial stworzyc sobie od dzisiejszej daty tez jest to mozliwe
+
+let futureDate = new Date(2022, 4, 25, 11, 30, 0); // it shows current or future date
+
 
 const year = futureDate.getFullYear();
 const hours = futureDate.getHours();
@@ -48,7 +57,7 @@ function getRemainingTime() {
     const today = new Date().getTime();
     const t = futureTime - today;
 
-    console.log(t);
+    // console.log(t);
     // 1 s = 1000 ms
     // 1 m = 60 s
     // 1 hr = 60 min
@@ -61,6 +70,34 @@ function getRemainingTime() {
 
     // calculate all calues
     let days = t/oneDay;
-    console.log(days);
+    days = Math.floor(days);
+
+
+    // let hours = t/oneHour; - Uzywajac takiego dzialania, otrzymamy ilosc godzin calkowita (tyle ile dni tylko w godzinach)
+    let hours = (t % oneDay) / oneHour; // Uzywajac takiego wyrazenia, otrzymamy reszte z tego ile dni nam zostalo
+    hours = Math.floor(hours)
+
+    let minutes = Math.floor((t % oneHour) / oneMinute);
+    let seconds = Math.floor((t % oneMinute) / 1000);
+
+    // set values array;
+    const values = [days, hours, minutes, seconds];
+
+    function format(item){
+        if(item < 10){
+            return item = `0${item}`
+        }
+        return item
+    }
+
+    items.forEach(function(item, index){
+        item.innerHTML = format(values[index]);
+    });
+
+    if(t < 0){
+        clearInterval(countdown);
+    }
 }
+// countdown
+let countdown = setInterval(getRemainingTime, 1000);
 getRemainingTime();
