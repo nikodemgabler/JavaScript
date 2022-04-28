@@ -3,14 +3,21 @@
     margin: 0;
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
 }
 
 .section-center {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 60vh;
+    box-shadow: 0px 4px 36px -9px rgb(156, 160, 177);
+    border-radius: 8px;
+    min-height: 400px;
 }
 
 h3 {
@@ -18,21 +25,24 @@ h3 {
     text-align: center;
     font-size: 34px;
 }
-
+button {
+    cursor: pointer;
+}
 form {
     width: 30vw;
     min-height: 200px;
     background-color: white;
-    box-shadow: 0px 0px 2px 2px  rgb(223, 223, 223);
     display: grid;
 }
 
 input{
     width: 70%;
+    height: 35px;
     padding: 0 20px;
     border: none;
     background-color: rgba(212, 234, 255, 0.692);
     border-radius: 10px 0px 0px 10px;
+    font-size: 20px;
 }
 
 .form-control {
@@ -41,15 +51,73 @@ input{
     margin: 0 20px;
 }
 
-button {
+.submit-btn {
     width: 30%;
     background-color: rgba(83, 172, 255, 0.692);
     border: none;
-    cursor: pointer;
     border-radius: 0px 10px 10px 0px;
     font-size: 14px;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 2px;
+    height: 35px;
 }
 
+.grocery-container {
+    /* visibility: hidden; */
+    display: grid;
+    width: 30vw;
+    min-height: 100px;
+    padding: 20px 20px 0px 20px;
+}
+
+.edit-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(225, 0, 255);
+}
+
+.delete-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+}
+
+.grocery-list {
+    width: 100%;
+}
+
+.show-container {
+    visibility: visible;
+}
+
+
+
+.grocery-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(83, 172, 255, 0.692);
+    padding: 5px 20px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.clear-btn {
+    height: 30px;
+    justify-self: center;
+    background-color: white;
+    border: none;
+    color: red;
+    align-self: end;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-top: 70px;
+}
