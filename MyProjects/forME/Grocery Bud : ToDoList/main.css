@@ -64,7 +64,7 @@ input{
 }
 
 .grocery-container {
-    /* visibility: hidden; */
+    visibility: hidden;
     display: grid;
     width: 30vw;
     min-height: 100px;
