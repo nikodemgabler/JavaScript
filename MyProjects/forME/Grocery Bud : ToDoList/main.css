@@ -1,10 +1,11 @@
 * {
     box-sizing: border-box;
-    margin: 0;
+    margin: 0; 
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
 }
+
 body {
     display: flex;
     justify-content: center;
@@ -24,15 +25,21 @@ h3 {
     text-transform: uppercase;
     text-align: center;
     font-size: 34px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
+
 button {
     cursor: pointer;
 }
+
 form {
     width: 30vw;
     min-height: 200px;
     background-color: white;
     display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    align-items: end;
 }
 
 input{
@@ -97,9 +104,7 @@ input{
     visibility: visible;
 }
 
-
-
-.grocery-item{
+.grocery-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -121,3 +126,29 @@ input{
     letter-spacing: 4px;
     margin-top: 70px;
 }
+
+.alert {
+    visibility: hidden;
+    text-align: center;
+    background-color: rgb(255, 185, 185);
+    color: rgb(199, 60, 60);
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin: 0 30px;
+    border-radius: 8px;
+    padding: 3px;
+}
+
+.alert-danger {
+    visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
