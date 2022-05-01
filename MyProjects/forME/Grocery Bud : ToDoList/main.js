@@ -34,12 +34,32 @@ function addItem(e) {
     // 1. Dodanie itemu do listy - jezeli nie edytujemy 
     if (value && !editFlag) {
         const element = document.createElement('article');
+        // add class
         element.classList.add('grocery-item');
         // add id
         const attr = document.createAttribute('data-id');
         attr.value = id;
         element.setAttributeNode(attr);
-        console.log(element)
+        element.innerHTML = 
+        `<p class="title">${value}</p>
+        <div class="btn-container">
+            <button type="button" class="edit-btn">
+                <div class="edit-icon">E</div>
+            </button>
+            <button type="button" class="delete-btn">
+                <div class="delete-icon">X</div>
+            </button>
+        </div>`
+        // append child
+        list.appendChild(element)
+        // display alert
+        displayAlert('item added to the list', 'success');
+        // show container
+        container.classList.add('show-container')
+        //add to local storage
+        addToLocalStorage(id, value);
+        // set back to default
+        setBackToDefault()
     }
     // 2. Edytowanie itemu
     else if(value && editFlag) {
