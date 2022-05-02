@@ -9,7 +9,6 @@
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
     min-height: 70vh;
 }
 
@@ -19,6 +18,7 @@ body {
     box-shadow: 0px 4px 36px -9px rgb(156, 160, 177);
     border-radius: 8px;
     min-height: 400px;
+    margin-top: 100px;
 }
 
 h3 {
@@ -112,6 +112,7 @@ input{
     padding: 5px 20px;
     border-radius: 12px;
     margin-bottom: 10px;
+    text-transform: capitalize;
 }
 
 .clear-btn {
@@ -141,6 +142,12 @@ input{
 
 .alert-danger {
     visibility: visible;
+}
+
+.alert-success {
+    visibility: visible;
+    background-color: greenyellow;
+    color: black;
 }
 
 
