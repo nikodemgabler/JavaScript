@@ -18,6 +18,9 @@ form.addEventListener('submit', addItem);
 // clear items
 clearBtn.addEventListener('click', clearItems)
 
+const deleteBtn = document.querySelector('.delete-btn');
+console.log(deleteBtn);
+
 // ********* FUNCTIONS *********
 // addItem
 function addItem(e) {
