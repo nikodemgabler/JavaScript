@@ -8,6 +8,10 @@
 body {
     background: rgb(218, 255, 255);
 }
+html {
+    z-index: -99999;
+    height: 100%;
+}
 
 header {
     width: 100%;
@@ -40,7 +44,7 @@ ul.inactive{
 ul.active {
     display: block;
     transform: translateY(0);
-    transition: .4s ease-in-out;
+    transition: .4s ease;
     position: absolute;
     top: 78px;
     width: 100%;
@@ -68,7 +72,7 @@ a {
     margin: 10px 30px 10px 0;
     align-self: center;
     cursor: pointer;
-    transition: .5s ease-in-out;
+    transition: .4s ease;
     z-index: 9999;
 }
 .burger::before{
